@@ -1,66 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="horizontal">
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/main_edit_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/enter"
-            android:inputType="phone"/>
-
-    <!--android:layout_alignParentBottom="true"-->
-    <!--android:layout_toLeftOf="@id/main_button"-->
-    <!--android:inputType="textEmailAddress"-->
-    <!--android:inputType="textCapSentences"-->
-    <!--android:inputType="textPassword"-->
-
-        <Spinner
-            android:id="@+id/label_spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <Button
-            android:id="@+id/main_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="showText"
-            android:text="@string/show" />
-
-    <!--android:layout_alignParentBottom="true"-->
-    <!--android:layout_alignParentRight="true"-->
-
-    </LinearLayout>
-
-    <LinearLayout
+    <TextView
+        android:id="@+id/text1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_alignParentBottom="true">
+        android:text="@string/choose_date_time"
+        android:textSize="@dimen/text_size"/>
 
-        <TextView
-            android:id="@+id/title_phone_label"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/date_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/phone_number" />
+            android:layout_marginTop="@dimen/button_top_margin"
+            android:text="@string/date"
+            android:onClick="onClickShowDatePickerDialog"/>
 
-        <TextView
-            android:id="@+id/text_phone_label"
+        <Button
+            android:id="@+id/time_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/nothing_entered" />
+            android:layout_marginTop="@dimen/button_top_margin"
+            android:layout_alignBottom="@id/date_button"
+            android:layout_toRightOf="@id/date_button"
+            android:onClick="onCLickShowTimePickerDialog"
+            android:text="@string/time"/>
 
-    </LinearLayout>
+    </RelativeLayout>
 
-
-</RelativeLayout>
+</LinearLayout>
 
